@@ -14,16 +14,20 @@ public class Main {
         SessionFactory factory = cfg.buildSessionFactory();
 
         Student st=new Student();
-        st.setId(5);
+        st.setId(2);
 
         st.setCity("banda");
-        st.setName("raj");
+        st.setName("rajdhar");
 
         System.out.println(st);
 
         Session session = factory.openSession();
         Transaction tx = session.beginTransaction();
         session.save(st);
+        // delete object
+//        st.setId(5);
+
+//        session.delete(st);
         tx.commit();
 
         session.close();
